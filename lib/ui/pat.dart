@@ -16,7 +16,7 @@ class _PatLoginState extends State<PatLogin> {
   bool _remember = false;
   bool _isLoading = false;
   final _storage = const FlutterSecureStorage();
-  String? _currentPat; // RAM token
+  String? _currentPat; 
 
   Future<bool> _checkPat(String pat) async {
     final url = Uri.parse('https://api.github.com/user');
@@ -64,7 +64,7 @@ class _PatLoginState extends State<PatLogin> {
         return;
       }
 
-      _currentPat = pat; // RAM’de tut
+      _currentPat = pat; 
 
       if (_remember) {
         await _storage.write(key: 'github_pat', value: pat);
@@ -102,8 +102,8 @@ class _PatLoginState extends State<PatLogin> {
   decoration: const BoxDecoration(
     gradient: LinearGradient(
       colors: [
-        Color.fromARGB(255, 42, 29, 180), // neredeyse saf beyaz
-        Color.fromARGB(255, 133, 149, 173), // çok hafif gri-mavi
+        Color.fromARGB(255, 42, 29, 180), 
+        Color.fromARGB(255, 133, 149, 173),
       ],
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
