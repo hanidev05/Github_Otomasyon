@@ -1,36 +1,41 @@
-🚀 OtomasyonGit
-English | Turkish
+# 🚀 OtomasyonGit
+
+**English | Turkish**
+
+---
 
 <a name="english"></a>
 
-🇬🇧 English
-This project is designed to help new users learn GitHub by utilizing the GitHub API. It provides a hands-on environment to understand how repositories, commits, and pushes work.
+## 🇬🇧 English
 
-🛠️ Requirements
-Git: Must be installed on your system.
+**OtomasyonGit** is designed to help new users learn GitHub by interacting with the GitHub API. It provides a practical environment to understand repositories, commits, and pushes.
 
-Wi-Fi: An active internet connection is required for API communication.
+### 🛠️ Requirements
+- **Git**: Must be installed on your system.
+- **Internet**: An active connection is required for API communication.
+- **PAT (Personal Access Token)**: A GitHub token is required. (Preferably a Classic PAT with `repo` permissions.)
 
-PAT (Personal Access Token): A GitHub token is required (Classic PAT with repo permissions is preferred).
+### ⚠️ Warning
+**Important:** During remote push operations, files in your working directory may be modified or deleted depending on the application’s behavior. Always work on copies or backups to prevent data loss.
 
-⚠️ Warning
-IMPORTANT: During the process of pushing to a remote repository, there is a risk that files in the working directory might be modified or deleted depending on the application's logic. Always operate on copies/backups of your projects to prevent data loss.
+### 💡 Note
+The compiled `.exe` file is **not included** in this repository. To run the project, please use a Flutter environment or build it yourself.
+
+---
 
 <a name="turkish"></a>
 
-🇹🇷 Türkçe
-Bu proje, yeni kullanıcıların GitHub API kullanarak GitHub ekosistemini öğrenmelerine yardımcı olmayı amaçlar. Depo yönetimi, commit ve push gibi işlemleri pratik yaparak anlamanızı sağlar.
+## 🇹🇷 Türkçe
 
-🛠️ Gereksinimler
-Git: Sisteminizde Git yüklü olmalıdır.
+**OtomasyonGit**, yeni kullanıcıların GitHub API ile GitHub ekosistemini öğrenmelerine yardımcı olmak için tasarlanmıştır. Depo yönetimi, commit ve push işlemlerini pratik yaparak anlamanızı sağlar.
 
-Wi-Fi: API iletişimi için aktif internet bağlantısı gereklidir.
+### 🛠️ Gereksinimler
+- **Git**: Sisteminizde Git yüklü olmalıdır.
+- **İnternet**: API iletişimi için aktif bir bağlantı gereklidir.
+- **PAT (Kişisel Erişim Anahtarı)**: GitHub üzerinden alınmış bir token gereklidir. (Tercihen `repo` yetkisine sahip Classic PAT.)
 
-PAT (Kişisel Erişim Anahtarı): GitHub üzerinden alınmış bir token gereklidir (Tercihen repo yetkilerine sahip "Classic" PAT).
+### ⚠️ Uyarı
+**Önemli:** Uzak sunucuya gönderme (push) işlemleri sırasında, uygulamanın mantığına bağlı olarak çalışma dizinindeki dosyalar değişebilir veya silinebilir. Veri kaybını önlemek için işlemlerinizi her zaman kopya veya yedek klasörler üzerinde gerçekleştirin.
 
-⚠️ Uyarı
-ÖNEMLİ: Uzak sunucuya (remote) gönderme (push) işlemleri sırasında, uygulama mantığına bağlı olarak çalışma dizinindeki dosyaların silinme riski bulunmaktadır. Veri kaybını önlemek için işlemlerinizi her zaman kopya/yedek klasörler üzerinde gerçekleştiriniz.
-
-💡 Not (Note)
-The compiled .exe file is not included in this repository. To run the project, please use the Flutter environment or build it yourself.
-Derlenmiş .exe dosyası bu depoya dahil edilmemiştir. Projeyi çalıştırmak için lütfen Flutter ortamını kullanın veya kendiniz derleyin.
+### 💡 Not
+Derlenmiş `.exe` dosyası bu depoya **dahil edilmemiştir**. Projeyi çalıştırmak için Flutter ortamını kullanın veya kendiniz derleyin.
