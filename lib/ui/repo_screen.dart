@@ -28,14 +28,14 @@ class RepoDetailScreen extends StatefulWidget {
   final String repoName;
   final String owner;
   final String? pat;
-  final String initialBranch; // ✅ YENİ
+  final String initialBranch; 
 
   const RepoDetailScreen({
     super.key,
     required this.repoName,
     required this.owner,
     this.pat,
-    this.initialBranch = 'main', // ✅ varsayılan
+    this.initialBranch = 'main', 
   });
 
   @override
@@ -57,7 +57,7 @@ class _RepoDetailScreenState extends State<RepoDetailScreen> {
   @override
   void initState() {
     super.initState();
-    selectedBranch = widget.initialBranch; // ✅ önceki ekrandan gelen branch kullan
+    selectedBranch = widget.initialBranch; 
     _loadBranches().then((_) => _loadRemoteFiles());
   }
 
@@ -159,7 +159,7 @@ class _RepoDetailScreenState extends State<RepoDetailScreen> {
         Set<String> allBranches = {...remoteBranches, ...localBranches};
         setState(() {
           availableBranches = allBranches.toList();
-          // ✅ Eğer mevcut selectedBranch listede varsa koru, yoksa fallback
+          
           if (!allBranches.contains(selectedBranch)) {
             if (allBranches.contains('main')) {
               selectedBranch = 'main';
@@ -387,7 +387,7 @@ class _RepoDetailScreenState extends State<RepoDetailScreen> {
     }
   }
 
-  // ✅ DÜZELTİLDİ: Branch adı dinamik alınıyor, reset --hard kaldırıldı
+ 
   Future<void> pushToRemote() async {
     if (selectedLocalPath == null) return;
 
@@ -408,12 +408,12 @@ class _RepoDetailScreenState extends State<RepoDetailScreen> {
     var shell = Shell(workingDirectory: selectedLocalPath!);
 
     try {
-      // 1. Local branch adını dinamik al (master, main, feature/x vs.)
+    
       final branchResult = await shell.run('git rev-parse --abbrev-ref HEAD');
       final localBranch = branchResult.outLines.first.trim();
       addLog("Local branch: $localBranch → Remote branch: $selectedBranch");
 
-      // 2. Remote'da hedef branch var mı kontrol et
+    
       bool remoteHasBranch = false;
       try {
         await shell.run('git ls-remote --exit-code --heads origin $selectedBranch');
@@ -423,7 +423,7 @@ class _RepoDetailScreenState extends State<RepoDetailScreen> {
       }
       addLog("Remote branch mevcut mu: $remoteHasBranch");
 
-      // 3. Remote branch varsa pull --rebase ile senkronize et
+    
       if (remoteHasBranch) {
         try {
           await shell.run('git pull --rebase origin $selectedBranch');
@@ -433,11 +433,11 @@ class _RepoDetailScreenState extends State<RepoDetailScreen> {
         }
       }
 
-      // 4. Local branch → Remote selectedBranch olarak push et
+     
       await shell.run('git push -u origin $localBranch:$selectedBranch --force');
       addLog("✅ Push başarılı! ($localBranch → $selectedBranch)");
 
-      // 5. Remote dosya listesini yenile
+      
       await _loadRemoteFiles();
     } catch (e) {
       addLog("❌ Push hatası: $e");
